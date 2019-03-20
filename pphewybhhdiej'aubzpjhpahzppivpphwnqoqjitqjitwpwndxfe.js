@@ -90,7 +90,7 @@
 	}; 
 	
   var styleOverlay = function() {
-	ctx.filter = 'hue-rotate(300deg) saturate(4)';
+	ctx.filter = 'hue-rotate(300deg) saturate(2) contrast(110%) brightness(110%)';
 	}; 
 	
   var styleInvert = function() {
