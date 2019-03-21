@@ -40,6 +40,10 @@
 
   var glitchAnimation = function() {
 
+	setTimeout(styleBase, 500);
+	setTimeout(styleInvert, 5000);
+	setTimeout(styleOverlay, 7000);
+
     if (!(currentFrame % totalFrame) || currentFrame > totalFrame) {
 
       clearCanvas();
@@ -75,10 +79,6 @@
     }
 
     currentFrame++;
-
-	setTimeout(styleBase, 15000);
-	setTimeout(styleInvert, 1000);
-	setTimeout(styleOverlay, 1000);
 	
     window.requestAnimationFrame(glitchAnimation);
   };
