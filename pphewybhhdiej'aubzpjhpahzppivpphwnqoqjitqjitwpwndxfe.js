@@ -89,20 +89,18 @@
 	}; 
 	
   var styleOverlay = function() {
-	var x = randInt(0, 2);
-	if (x == 0)
-		ctx.filter = 'hue-rotate(25deg) saturate(2) contrast(110%) brightness(110%)';
-	else
-		ctx.filter = 'hue-rotate(-25deg) saturate(2) contrast(110%) brightness(110%)';
+	var x = randInt(25, 360);
+		ctx.filter = 'hue-rotate(' + x + 'deg) saturate(2) contrast(110%) brightness(110%)';
 	}; 
 	
   var styleInvert = function() {
-	ctx.filter = 'invert(100%) blur(2px) brightness(75%) contrast(300%) hue-rotate(100deg)';
+	 var x = randInt(25, 360);
+	ctx.filter = 'invert(100%) blur(2px) brightness(75%) contrast(300%) hue-rotate(' + x + 'deg)';
 	}; 
 	
   var filterSharp = function() {
   Filters.tmpCanvas = document.createElement('canvas');
-Filters.tmpCtx = Filters.tmpCanvas.getContext('2d');
+  Filters.tmpCtx = Filters.tmpCanvas.getContext('2d');
 
 Filters.createImageData = function(w,h) {
   return this.tmpCtx.createImageData(w,h);
