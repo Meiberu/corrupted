@@ -77,7 +77,6 @@
 	
 	setInterval(styleBase, 500 + randInt(0-4500));
 	setInterval(styleEffects, 2500 + randInt(0-2500));
-	setInterval(styleOverlay, 7500 + randInt(0-2500));
 	setInterval(styleInvert, 7500 + randInt(0-2500));
 	
     window.requestAnimationFrame(glitchAnimation);
@@ -87,11 +86,6 @@
 
   var styleBase = function() {
 	ctx.filter = 'none';
-	}; 
-	
-  var styleOverlay = function() {
-	var x = randInt(25, 330);
-		ctx.filter = 'hue-rotate(' + x + 'deg) saturate(2) contrast(125%) brightness(125%)';
 	}; 
 	
   var styleInvert = function() {
