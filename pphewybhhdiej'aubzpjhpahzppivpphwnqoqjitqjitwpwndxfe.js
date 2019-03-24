@@ -39,10 +39,6 @@
 
   var glitchAnimation = function() {
 
-	setInterval(styleBase, 500 + randInt(0-4500));
-	setInterval(styleOverlay, 5000);
-	setInterval(styleInvert, 7000);
-
     if (!(currentFrame % totalFrame) || currentFrame > totalFrame) {
 
       clearCanvas();
@@ -79,6 +75,11 @@
 
     currentFrame++;
 	
+	setInterval(styleBase, 500 + randInt(0-4500));
+	setInterval(styleEffects, 2500 + randInt(0-2500));
+	setInterval(styleOverlay, 7500 + randInt(0-2500));
+	setInterval(styleInvert, 7500 + randInt(0-2500));
+	
     window.requestAnimationFrame(glitchAnimation);
   };
 
@@ -89,13 +90,22 @@
 	}; 
 	
   var styleOverlay = function() {
-	var x = randInt(25, 360);
-		ctx.filter = 'hue-rotate(' + x + 'deg) saturate(2) contrast(110%) brightness(110%)';
+	var x = randInt(25, 330);
+		ctx.filter = 'hue-rotate(' + x + 'deg) saturate(2) contrast(125%) brightness(125%)';
 	}; 
 	
   var styleInvert = function() {
-	 var x = randInt(25, 360);
+	 var x = randInt(25, 330);
 	ctx.filter = 'invert(100%) blur(2px) brightness(75%) contrast(300%) hue-rotate(' + x + 'deg)';
+	}; 
+	
+  var styleEffects = function() {
+	 var invert = randInt(-1,2);
+	 var blurs = randInt(0, 3);
+	 var bright = randInt(75, 125);
+	 var contr = randInt(90, 300);
+	 var color = randInt(25, 325);
+	ctx.filter = 'invert('+invert+') blur('+blurs+'px) brightness('+bright+'%) contrast('+contr+'%) hue-rotate('+color+'deg)';
 	}; 
 
   var pixelFlick = function(i, d) {
