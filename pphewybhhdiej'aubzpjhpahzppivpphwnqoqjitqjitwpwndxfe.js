@@ -94,7 +94,7 @@
 	}; 
 	
   var styleEffects = function() {
-	 var invert = randInt(-1,2);
+	 var invert = randInt(0,2);
 	 var blurs = randInt(0, 3);
 	 var bright = randInt(75, 125);
 	 var contr = randInt(90, 300);
