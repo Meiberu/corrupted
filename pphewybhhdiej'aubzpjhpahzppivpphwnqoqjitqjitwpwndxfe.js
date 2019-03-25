@@ -89,8 +89,9 @@
 	}; 
 	
   var styleInvert = function() {
-	 var x = randInt(25, 330);
-	ctx.filter = 'invert(100%) blur(2px) brightness(75%) contrast(300%) hue-rotate(' + x + 'deg)';
+	 var color = randInt(25, 330);
+	 var blurs = randInt(0, 3);
+	ctx.filter = 'invert(1) blur('+blurs+'px) brightness(75%) contrast(300%) hue-rotate('+color+'deg)';
 	}; 
 	
   var styleEffects = function() {
