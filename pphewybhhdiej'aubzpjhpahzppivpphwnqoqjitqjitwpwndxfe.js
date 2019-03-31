@@ -78,6 +78,7 @@
 	setInterval(styleBase, 500 + randInt(0-4500));
 	setInterval(styleEffects, 2500 + randInt(0-2500));
 	setInterval(styleInvert, 7500 + randInt(0-2500));
+	setInterval(styleColors, 7500 + randInt(0-2500));
 	
     window.requestAnimationFrame(glitchAnimation);
   };
@@ -94,11 +95,19 @@
 	ctx.filter = 'invert(1) blur('+blurs+'px) brightness(75%) contrast(300%) hue-rotate('+color+'deg)';
 	}; 
 	
+	var styleColors = function() {
+	 var color = randInt(25, 330);
+	 var blurs = randInt(0, 3);
+	 var bright = randInt(75, 150);
+	 var contr = randInt(75, 300);
+	ctx.filter = 'blur('+blurs+'px) brightness('+bright+'%) contrast('+contr+'%) hue-rotate('+color+'deg)';
+	}; 
+	
   var styleEffects = function() {
 	 var invert = randInt(0,2);
 	 var blurs = randInt(0, 3);
 	 var bright = randInt(75, 125);
-	 var contr = randInt(90, 300);
+	 var contr = randInt(75, 300);
 	 var color = randInt(25, 325);
 	ctx.filter = 'invert('+invert+') blur('+blurs+'px) brightness('+bright+'%) contrast('+contr+'%) hue-rotate('+color+'deg)';
 	}; 
